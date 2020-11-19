@@ -5,7 +5,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 import LoginSignupPage from "./components/LoginSignupPage.js";
 import BuyersHomePage from "./components/BuyersHomePage.js";
-import HomePage from "./components/HomePage.js";
+import BuyersLoggedinHomePage from "./components/BuyersLoggedinHomePage.js";
 import AdminHomePage from "./components/AdminHomePage.js";
 
 function loading(event) {
@@ -17,13 +17,17 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Delete later</h1>
+        <h1>Delete this heading later</h1>
         <Switch>
           <Route exact path="/loginSignupPage" component={LoginSignupPage} />
-          <PrivateRoute exact path="/homePage" component={HomePage} />
+          <PrivateRoute
+            exact
+            path="/homePage"
+            component={BuyersLoggedinHomePage}
+          />
           <PrivateRoute exact path="/adminHomePage" component={AdminHomePage} />
-          <BuyersHomePage />
         </Switch>
+        <BuyersHomePage />
       </div>
     </Router>
   );

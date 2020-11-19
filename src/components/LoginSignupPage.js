@@ -10,7 +10,7 @@ function LoginSignupPage() {
   return (
     <div>
       <h1 style={{ color: "green" }}>
-        {"<-------login and sign up page------>"}{" "}
+        {"<-------login and sign up page------>"}
       </h1>
       <Link to="/buyersHomePage">Buyers Home Page</Link>
       <div className="loginSignupPage">
