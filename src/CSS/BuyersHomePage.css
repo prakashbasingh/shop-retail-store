@@ -1,7 +1,8 @@
+/* Menu Bae CSS */
 .buyersHomePageContainer{
     width: 100%;
     height: 100%;
-    border: 1px solid orangered;
+    /* border: 1px solid orangered; */
     margin: auto;
 
 }
@@ -13,42 +14,38 @@
 }
 
 .menuBar{
-    /* float: left; */
     max-width: 80%;
     margin: 0 auto;
     background: gray;
     height: 100%;
-    /* padding: 5px;; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     list-style: none;
     text-align: center;
 }
 .menuItem{
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     /* justify-content: flex-start; */
     /* align-content: flex-end; */
-    /* margin: 0 20px; */
-    border: 1px solid magenta;
-    height: 40px;
+    margin: 0;
+    /* border: 1px solid magenta; */
     width: 150px;
 }
 .menuItem2{
-    border: 1px solid rgb(151, 5, 5);
-    /* margin: 2px; */
+    /* border: 1px solid rgb(151, 5, 5); */
     display: flex;
     justify-content: center;
-    /* flex-direction: column; */
-    /* align-items: center; */
+    /* align-items: flex-end; */
     width: 140px;
-    height: 40px;
+    height: 30px;
 }
 .menuItem3{
     display: none;
+    margin-top: 0;
 }
 .menuItem:hover{
     background:  rgb(25, 58, 25);
@@ -60,22 +57,19 @@ ul {
     /* width: 100px; */
     background: rgb(25, 58, 25);
     list-style: none;
-    /* margin-block-start: 1em; */
     margin-block-end: 1em;
     border: 1px solid gold;
     display: flex;
     flex-direction: column;
-    /* transition: all 800ms ease-in-out;
-    z-index: 1; */
     min-width: 50px;
     width: 100px;
     box-shadow: 8px 8px 16px 16px rgba(6, 247, 38, 0.2);
 }
 /* .menuWrap > .menuBar > .menuItem > .menuItem3 > ul */
 .menuWrap > .menuBar > .menuItem > .menuItem3 > ul li{
-    float: left;
+    /* float: left; */
     width: 90px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     /* margin: 5px; */
     
 }
@@ -83,23 +77,24 @@ ul {
     text-transform: uppercase;
     height: 50px;
 }
-.title,.title2:hover{
-    color: red;
-}
-/* .title:hover li{
-    color: red;
-    background: gold;
-} */
 .title,.title2{
     color: gold;
     text-decoration: none;
     margin-left: 0;
 }
+.title:hover{
+    color: red;
+}
+.title2:hover{
+    color: red;
+}
+
+
 
 
 .subMenu li{
     margin: 2%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     text-align: left;
     width: 100px;
 }
@@ -107,20 +102,55 @@ ul {
 
 
 .downArrow{
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bolder;
     margin: 5px;
-    color: rgb(7, 5, 94);
+    color: gold;
 }
+
 .pages{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     right: 0;
     width: 80%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     height: 100%;
 }
 .pages2{
     margin: 0 20px;
+}
+/* Section CSS */
+.section{
+    border: 1px solid red;
+    height: 200vh;
+}
+.imageHolder{
+    height: 40%;
+    width: 100%;
+    border: 1px solid magenta;
+    background-image: url("../images/homePageImage.jpg");
+    background-image: linear-gradient();
+    
+}
+img{
+
+    height: 300px;
+    width: 300px;
+    z-index: -1;
+    /* position:/ */
+    /* object-fit: contain; */
+}
+h1{
+    color: red;
+}
+.featureProduce{
+    border: 1px solid gold;
+}
+.productContainer{
+    display: flex;
+
+}
+.imageTitleContainer{
+    border: 1px solid green;
 }

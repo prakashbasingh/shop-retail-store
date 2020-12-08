@@ -26,8 +26,8 @@ function App() {
             component={BuyersLoggedinHomePage}
           />
           <PrivateRoute exact path="/adminHomePage" component={AdminHomePage} />
+          <BuyersHomePage />
         </Switch>
-        <BuyersHomePage />
       </div>
     </Router>
   );

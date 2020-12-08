@@ -1,13 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+
+import homePageImage from "../images/homePageImage.jpg";
 
 import "../CSS/BuyersHomePage.css";
 
+// import imageData from "../imageDataFile.js";
+// console.log(imageData, ")))))))))))))))))");
+
 function BuyersHomePage() {
+  const [image, setImage] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://picsum.photos/v2/list?limit=10`)
+      .then((res) => {
+        console.log(res, "IMage Image IMAGE");
+        setImage(res.data);
+      })
+      .catch((error) => {
+        console.log(error, "We have data fetching error");
+      });
+  }, []);
   return (
     <div className="buyersHomePageContainer">
       <h1 className="logo">Mr. Liquor</h1>
-      <span>{"Your local Store for spirits, beers, wines & snacks"}</span>
+      <span>
+        {"Your local Store for spirits, beers, wines, snacks & more........."}
+      </span>
       <h3 style={{ color: "green" }}>"NO" Log In required page</h3>
       <div className="menuWrap">
         <nav className="menuBar">
@@ -217,9 +239,24 @@ function BuyersHomePage() {
       </div>
       <section className="section">
         <div className="imageHolder">
-          <img src=""></img>
+          <h1>Welcome To Mr. Liquor</h1>
         </div>
-        <div className="featureProduce"></div>
+        <div className="featureProduce">
+          <h1>image display</h1>
+          <div className="productContainer">
+            {image.map((images) => (
+              <div className="imageTitleContainer">
+                <img
+                  className="image"
+                  src={images.download_url}
+                  alt="MrLiquor"
+                  fluid
+                ></img>
+                <h4>Image Title: {images.author}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="productCarousel"></div>
       </section>
       <footer className="footer"></footer>
