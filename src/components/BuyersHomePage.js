@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import axios from "axios";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+// import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-import homePageImage from "../images/homePageImage.jpg";
+// import homePageImage from "../images/homePageImage.jpg";
 
 import "../CSS/BuyersHomePage.css";
 
@@ -11,19 +11,21 @@ import "../CSS/BuyersHomePage.css";
 // console.log(imageData, ")))))))))))))))))");
 
 function BuyersHomePage() {
-  const [image, setImage] = useState([]);
+  const [imageData, setImageData] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     axios
       .get(`https://picsum.photos/v2/list?limit=10`)
       .then((res) => {
-        console.log(res, "IMage Image IMAGE");
-        setImage(res.data);
+        console.log(res.data, "IMage Image IMAGE");
+        setImageData(res.data);
       })
       .catch((error) => {
         console.log(error, "We have data fetching error");
       });
   }, []);
+
   return (
     <div className="buyersHomePageContainer">
       <h1 className="logo">Mr. Liquor</h1>
@@ -244,17 +246,25 @@ function BuyersHomePage() {
         <div className="featureProduce">
           <h1>image display</h1>
           <div className="productContainer">
-            {image.map((images) => (
-              <div className="imageTitleContainer">
-                <img
-                  className="image"
-                  src={images.download_url}
-                  alt="MrLiquor"
-                  fluid
-                ></img>
-                <h4>Image Title: {images.author}</h4>
-              </div>
-            ))}
+            <button
+              disabled={currentIndex === 0}
+              onClick={() => setCurrentIndex(currentIndex - 1)}
+            >
+              {"<"}
+            </button>
+            <div className="imageTitleContainer">
+              <img
+                className="image"
+                src={imageData[currentIndex].download_url}
+              ></img>
+              <h4>Image Title: {imageData[currentIndex].author}</h4>
+            </div>
+            <button
+              disabled={currentIndex === imageData.length - 1}
+              onClick={() => setCurrentIndex(currentIndex + 1)}
+            >
+              {">"}
+            </button>
           </div>
         </div>
         <div className="productCarousel"></div>
