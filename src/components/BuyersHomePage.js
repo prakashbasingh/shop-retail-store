@@ -16,7 +16,7 @@ function BuyersHomePage() {
 
   useEffect(() => {
     axios
-      .get(`https://picsum.photos/v2/list?limit=10`)
+      .get("https://picsum.photos/v2/list?limit=10")
       .then((res) => {
         console.log(res.data, "IMage Image IMAGE");
         setImageData(res.data);
