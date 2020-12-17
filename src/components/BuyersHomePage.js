@@ -11,7 +11,7 @@ import "../CSS/BuyersHomePage.css";
 // console.log(imageData, ")))))))))))))))))");
 
 function BuyersHomePage() {
-  const [imageData, setImageData] = useState([]);
+  const [imageData, setImageData] = useState([{}]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
